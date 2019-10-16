@@ -8,15 +8,32 @@ void main() {
   printFruits(fruits); // try pass int in 2nd param
 
   greetUser(greet: 'Nice to meet you', name: 'Aiman');
+  greetUser(name: 'Syami');
 
   printName1('Syahmi Fauzi');
   printName2('Faiz Aiman');
 
+  print(square.runtimeType);
+
+  // nameless/anonymous function (lambda or closure in other PL)
+  var list = ['apples', 'bananas', 'oranges'];
+  list.forEach((fruit) {
+    print(fruit);
+  });
+  // or named fn as reference
+  list.forEach(showFruits);
+
+}
+
+void showFruits(fruit) {
+  print(fruit);
 }
 
 int square(int x) {
   return x * x;
 }
+// same as
+dynamic square2(var x) => x * x;
 
 /* takes parameter of list of strings */
 /* [optional parameter] */
@@ -29,8 +46,8 @@ void printFruits(List<String> fruits, [int qty]) {
   print(qty ?? 0);
 }
 
-/* named parameters */
-void greetUser({String name, String greet}) {
+/* named parameters, default value */
+void greetUser({String name, String greet = 'Haluu'}) {
   print('$greet $name!');
 }
 

@@ -10,7 +10,12 @@ void main() {
   /* Strings */
   String firstName = 'Syahmi';
   String lastName = 'Fauzi';
-  print('Strings: $firstName ${lastName}');
+  String rawString = r'No special treatement eg for \n in raw string.';
+  String multiLineStr = """We can
+    create multi-line
+    strings like this
+  """;
+  print('Strings: $firstName ${lastName}'); // string interpolation
 
   /* Booleans */
   bool flag = false;
@@ -29,5 +34,9 @@ void main() {
   int myNum = int.parse('6');          // str to int
   double myPI = double.parse('3.142'); // str to double
   String myStr = '22'.toString();   // int to str
+  String oneAsString = 1.toString();
+  assert(oneAsString == '1');
+  String piAsString = 3.1415.toStringAsFixed(2);
+  assert(piAsString == '3.14');
 
 }
